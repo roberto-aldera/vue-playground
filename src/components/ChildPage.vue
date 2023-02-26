@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import TheNavbar from "./TheNavbar.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import SupportIcon from "./icons/IconSupport.vue";
 </script>
 
 <template>
+  <TheNavbar />
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />

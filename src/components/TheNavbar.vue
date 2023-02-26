@@ -20,14 +20,13 @@ const dropdown1 = ref(false);
 
 <template>
   <MDBNavbar expand="lg" light bg="light" container>
-    <MDBNavbarBrand href="#">Brand</MDBNavbarBrand>
     <MDBNavbarToggler
       @click="collapse1 = !collapse1"
       target="#navbarSupportedContent"
     ></MDBNavbarToggler>
     <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
       <MDBNavbarNav class="mb-2 mb-lg-0">
-        <MDBNavbarItem router to="/" active> Home </MDBNavbarItem>
+        <MDBNavbarItem router to="/" active> 🏡 Home </MDBNavbarItem>
         <MDBNavbarItem router to="/new-page"> Link </MDBNavbarItem>
         <MDBNavbarItem router to="/child-page"> Child page 1 </MDBNavbarItem>
 
@@ -47,7 +46,6 @@ const dropdown1 = ref(false);
             </MDBDropdownMenu>
           </MDBDropdown>
         </MDBNavbarItem>
-        <MDBNavbarItem to="#" disabled> Disabled </MDBNavbarItem>
       </MDBNavbarNav>
       <!-- Search form -->
       <form class="d-flex input-group w-auto">
