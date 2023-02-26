@@ -1,0 +1,106 @@
+<script lang="ts">
+export default {
+  props: {
+    img_path: String,
+    title: String,
+  },
+};
+</script>
+
+<template>
+  <div>
+    <figure class="photo">
+      <img :src="img_path" />
+      <figcaption>
+        <h2>{{ title }}</h2>
+      </figcaption>
+    </figure>
+  </div>
+</template>
+
+<style lang="css">
+figure.photo {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 280px;
+  height: 280px;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.photo * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+figure.photo img {
+  max-width: 150%;
+  position: relative;
+  opacity: 0.8;
+}
+
+figure.photo figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+figure.photo h2 {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  display: inline-block;
+  background: #000000;
+  padding: 5% 5%;
+  margin: 0;
+  top: 40%;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+figure.photo:before {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  background: #ffffff;
+  position: absolute;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+figure.photo a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+figure.photo:hover img,
+figure.photo.hover img {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+figure.photo:hover h2,
+figure.photo.hover h2 {
+  -webkit-transform: translateY(20%);
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+body {
+  font-family: "Raleway", Arial, sans-serif;
+}
+</style>

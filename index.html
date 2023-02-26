@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://unpkg.com/vue-router@4"></script>
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <p> -->
+    <!-- use the router-link component for navigation. -->
+    <!-- specify the link by passing the `to` prop. -->
+    <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
+    <!-- <router-link to="/">Go to Home</router-link> -->
+    <!-- <router-link to="/newpage">Go to NewPage</router-link> -->
+    <!-- </p> -->
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/foo">Foo</router-link></li>
+      <li><router-link to="/bar">Bar</router-link></li>
+    </ul>
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
