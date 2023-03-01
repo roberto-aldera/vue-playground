@@ -8,7 +8,11 @@ export default {
 
   data() {
     return {
-      // image: "../src/assets/logo.svg",
+      items: [
+        { title: "Title1", img_path: "../src/assets/logo.svg" },
+        { title: "Title2", img_path: "../src/assets/logo.svg" },
+        { title: "Title3", img_path: "../src/assets/logo.svg" },
+      ],
     };
   },
 };
@@ -17,14 +21,8 @@ export default {
 <template>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-auto">
-        <AnImageTile img_path="../src/assets/logo.svg" title="The title" />
-      </div>
-      <div class="col-auto">
-        <AnImageTile img_path="../src/assets/logo.svg" title="The title" />
-      </div>
-      <div class="col-auto">
-        <AnImageTile img_path="../src/assets/logo.svg" title="The title" />
+      <div v-for="(item, index) in items" :key="index" class="col-auto">
+        <AnImageTile :img_path="item.img_path" :title="item.title" />
       </div>
     </div>
   </div>
