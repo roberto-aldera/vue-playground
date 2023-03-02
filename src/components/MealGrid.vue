@@ -9,9 +9,21 @@ export default {
   data() {
     return {
       items: [
-        { title: "Title1", img_path: "../src/assets/logo.svg" },
-        { title: "Title2", img_path: "../src/assets/logo.svg" },
-        { title: "Title3", img_path: "../src/assets/logo.svg" },
+        {
+          name: "pg1",
+          fullTitle: "Title1",
+          img_path: "../src/assets/logo.svg",
+        },
+        {
+          name: "pg2",
+          fullTitle: "Title2",
+          img_path: "../src/assets/logo.svg",
+        },
+        {
+          name: "pg3",
+          fullTitle: "Title3",
+          img_path: "../src/assets/logo.svg",
+        },
       ],
     };
   },
@@ -22,7 +34,9 @@ export default {
   <div class="container">
     <div class="row justify-content-center">
       <div v-for="(item, index) in items" :key="index" class="col-auto">
-        <AnImageTile :img_path="item.img_path" :title="item.title" />
+        <router-link to="/new-page"
+          ><AnImageTile :img_path="item.img_path" :title="item.fullTitle"
+        /></router-link>
       </div>
     </div>
   </div>
