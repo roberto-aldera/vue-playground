@@ -10,17 +10,17 @@ export default {
     return {
       items: [
         {
-          name: "pg1",
+          id: "pg1",
           fullTitle: "Title1",
           img_path: "../src/assets/logo.svg",
         },
         {
-          name: "pg2",
+          id: "pg2",
           fullTitle: "Title2",
           img_path: "../src/assets/logo.svg",
         },
         {
-          name: "pg3",
+          id: "pg3",
           fullTitle: "Title3",
           img_path: "../src/assets/logo.svg",
         },
@@ -34,7 +34,7 @@ export default {
   <div class="container">
     <div class="row justify-content-center">
       <div v-for="(item, index) in items" :key="index" class="col-auto">
-        <router-link to="/new-page"
+        <router-link :to="{ name: 'page', params: { id: item.id } }"
           ><AnImageTile :img_path="item.img_path" :title="item.fullTitle"
         /></router-link>
       </div>
