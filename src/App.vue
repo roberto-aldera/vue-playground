@@ -10,13 +10,42 @@ import MealGrid from "./components/MealGrid.vue";
   </header>
 
   <main>
-    <MealGrid />
+    <MealGrid :items="ItemList" />
   </main>
 
   <footer>
     <SimpleFooter />
   </footer>
 </template>
+
+<script lang="ts">
+export default {
+  components: {
+    MealGrid,
+  },
+  data() {
+    return {
+      ItemList: [
+        {
+          id: "pg1",
+          fullTitle: "Title1",
+          img_path: "../src/assets/logo.svg",
+        },
+        {
+          id: "pg2",
+          fullTitle: "Title2",
+          img_path: "../src/assets/logo.svg",
+        },
+        {
+          id: "pg3",
+          fullTitle: "Title3",
+          img_path: "../src/assets/logo.svg",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <style scoped>
 header {

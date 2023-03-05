@@ -16,30 +16,11 @@ import AnImageTile from "./AnImageTile.vue";
 
 <script lang="ts">
 export default {
+  props: {
+    items: Object,
+  },
   components: {
     AnImageTile,
-  },
-
-  data() {
-    return {
-      items: [
-        {
-          id: "pg1",
-          fullTitle: "Title1",
-          img_path: "../src/assets/logo.svg",
-        },
-        {
-          id: "pg2",
-          fullTitle: "Title2",
-          img_path: "../src/assets/logo.svg",
-        },
-        {
-          id: "pg3",
-          fullTitle: "Title3",
-          img_path: "../src/assets/logo.svg",
-        },
-      ],
-    };
   },
 };
 </script>
