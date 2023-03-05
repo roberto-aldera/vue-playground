@@ -14,7 +14,11 @@ const router = createRouter({
     { path: "/", component: App },
     { path: "/new-page", component: NewPageVue },
     { path: "/child-page", component: ChildPage },
-    { path: "/page/:id", component: NewPageVue, name: "page" },
+    {
+      path: "/page/:id",
+      component: NewPageVue,
+      name: "page",
+    },
   ],
 });
 
