@@ -3,6 +3,7 @@ import TheNavbar from "./TheNavbar.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import SupportIcon from "./icons/IconSupport.vue";
+import itemObj from "../App.vue";
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>{{ specificItem?.fullTitle }}</template>
+    <!-- <template #heading>{{ specificItem?.fullTitle }}</template> -->
     <div>params are: {{ $route.params }}</div>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis
@@ -35,29 +36,14 @@ import SupportIcon from "./icons/IconSupport.vue";
 
 <script lang="ts">
 export default {
-  data() {
-    // we don't want this data in two places, need to figure out how to move this around
-    return {
-      items: [
-        {
-          id: "pg1",
-          fullTitle: "Title1",
-        },
-        {
-          id: "pg2",
-          fullTitle: "Title2",
-        },
-        {
-          id: "pg3",
-          fullTitle: "Title3",
-        },
-      ],
-    };
+  props: {
+    items: Object, //Array<typeof itemObj>,
   },
-  computed: {
-    specificItem: function () {
-      return this.items.find((item) => item.id === this.$route.params.id);
-    },
-  },
+  // computed: {
+  //   specificItem: function (items) {
+  //     // var items2 = items as Array<any>;
+  //     return items.find((item) => item.id === this.$route.params.id);
+  //   },
+  // },
 };
 </script>

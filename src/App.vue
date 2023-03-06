@@ -19,6 +19,18 @@ import MealGrid from "./components/MealGrid.vue";
 </template>
 
 <script lang="ts">
+interface itemObj {
+  id: string;
+  fullTitle: string;
+  img_path: string;
+}
+
+const item0: itemObj = {
+  id: "pg1",
+  fullTitle: "Title1",
+  img_path: "../src/assets/logo.svg",
+};
+
 export default {
   components: {
     MealGrid,
@@ -26,11 +38,7 @@ export default {
   data() {
     return {
       ItemList: [
-        {
-          id: "pg1",
-          fullTitle: "Title1",
-          img_path: "../src/assets/logo.svg",
-        },
+        item0,
         {
           id: "pg2",
           fullTitle: "Title2",

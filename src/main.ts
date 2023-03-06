@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import NewPageVue from "./components/NewPage.vue";
+import NewPage from "./components/NewPage.vue";
 import ChildPage from "./components/ChildPage.vue";
 
 import "./assets/main.css";
@@ -12,11 +12,11 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: App },
-    { path: "/new-page", component: NewPageVue },
+    { path: "/new-page", component: NewPage },
     { path: "/child-page", component: ChildPage },
     {
       path: "/page/:id",
-      component: NewPageVue,
+      component: NewPage,
       name: "page",
     },
   ],
