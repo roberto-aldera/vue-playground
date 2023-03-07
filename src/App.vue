@@ -11,7 +11,7 @@ import { defineStore } from "pinia";
   </header>
 
   <main>
-    <MealGrid :items="ItemList" />
+    <MealGrid />
   </main>
 
   <footer>
@@ -32,12 +32,24 @@ const item0: itemObj = {
   img_path: "../src/assets/logo.svg",
 };
 
+const item1: itemObj = {
+  id: "pg2",
+  fullTitle: "Title2",
+  img_path: "../src/assets/logo.svg",
+};
+
+const item2: itemObj = {
+  id: "pg3",
+  fullTitle: "Title3",
+  img_path: "../src/assets/logo.svg",
+};
+
 export const useStore = defineStore("storeId", {
   // arrow function recommended for full type inference
   state: () => {
     return {
       // type inferred automatically
-      itemsFromStore: [item0],
+      itemsFromStore: [item0, item1, item2],
     };
   },
 });
@@ -45,23 +57,6 @@ export const useStore = defineStore("storeId", {
 export default {
   components: {
     MealGrid,
-  },
-  data() {
-    return {
-      ItemList: [
-        item0,
-        {
-          id: "pg2",
-          fullTitle: "Title2",
-          img_path: "../src/assets/logo.svg",
-        },
-        {
-          id: "pg3",
-          fullTitle: "Title3",
-          img_path: "../src/assets/logo.svg",
-        },
-      ],
-    };
   },
 };
 </script>

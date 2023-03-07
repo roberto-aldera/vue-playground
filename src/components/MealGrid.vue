@@ -21,9 +21,6 @@ import { useStore } from "@/App.vue";
 
 <script lang="ts">
 export default {
-  // props: {
-  //   items: Object,
-  // },
   components: {
     AnImageTile,
   },

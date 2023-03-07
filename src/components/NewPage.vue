@@ -2,8 +2,6 @@
 import TheNavbar from "./TheNavbar.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
-import SupportIcon from "./icons/IconSupport.vue";
-import itemObj from "../App.vue";
 import { useStore } from "../App.vue";
 </script>
 
@@ -37,9 +35,6 @@ import { useStore } from "../App.vue";
 
 <script lang="ts">
 export default {
-  // props: {
-  //   items: Object,
-  // },
   computed: {
     specificItem: function () {
       return useStore().itemsFromStore.find(
