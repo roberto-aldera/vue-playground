@@ -4,6 +4,7 @@ import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import SupportIcon from "./icons/IconSupport.vue";
 import itemObj from "../App.vue";
+import { useStore } from "../App.vue";
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import itemObj from "../App.vue";
     <template #icon>
       <DocumentationIcon />
     </template>
-    <!-- <template #heading>{{ specificItem?.fullTitle }}</template> -->
+    <template #heading>{{ specificItem?.fullTitle }}</template>
     <div>params are: {{ $route.params }}</div>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis
@@ -36,14 +37,15 @@ import itemObj from "../App.vue";
 
 <script lang="ts">
 export default {
-  props: {
-    items: Object, //Array<typeof itemObj>,
-  },
-  // computed: {
-  //   specificItem: function (items) {
-  //     // var items2 = items as Array<any>;
-  //     return items.find((item) => item.id === this.$route.params.id);
-  //   },
+  // props: {
+  //   items: Object,
   // },
+  computed: {
+    specificItem: function () {
+      return useStore().itemsFromStore.find(
+        (item) => item.id === this.$route.params.id
+      );
+    },
+  },
 };
 </script>

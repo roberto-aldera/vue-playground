@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { createPinia } from "pinia";
 import App from "./App.vue";
 import NewPage from "./components/NewPage.vue";
 import ChildPage from "./components/ChildPage.vue";
@@ -22,7 +23,9 @@ const router = createRouter({
   ],
 });
 
+const pinia = createPinia();
 const app = createApp({});
 app.use(router);
+app.use(pinia);
 
 app.mount("#app");
