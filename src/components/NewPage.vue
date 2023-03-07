@@ -12,7 +12,6 @@ import { useStore } from "../App.vue";
       <DocumentationIcon />
     </template>
     <template #heading>{{ specificItem?.fullTitle }}</template>
-    <div>params are: {{ $route.params }}</div>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis
     iaculis porta. Nulla id massa risus. Mauris blandit posuere nunc vel
