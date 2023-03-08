@@ -3,6 +3,7 @@ import TheNavbar from "./components/TheNavbar.vue";
 import SimpleFooter from "./components/SimpleFooter.vue";
 import MealGrid from "./components/MealGrid.vue";
 import { defineStore } from "pinia";
+import contentData from "../content_data.json";
 </script>
 
 <template>
@@ -26,30 +27,16 @@ interface itemObj {
   img_path: string;
 }
 
-const item0: itemObj = {
-  id: "pg1",
-  fullTitle: "Title1",
-  img_path: "../src/assets/logo.svg",
-};
-
-const item1: itemObj = {
-  id: "pg2",
-  fullTitle: "Title2",
-  img_path: "../src/assets/logo.svg",
-};
-
-const item2: itemObj = {
-  id: "pg3",
-  fullTitle: "Title3",
-  img_path: "../src/assets/logo.svg",
-};
-
 export const useStore = defineStore("storeId", {
   // arrow function recommended for full type inference
   state: () => {
     return {
       // type inferred automatically
-      itemsFromStore: [item0, item1, item2],
+      itemsFromStore: [
+        contentData.items.item1,
+        contentData.items.item2,
+        contentData.items.item3,
+      ],
     };
   },
 });
