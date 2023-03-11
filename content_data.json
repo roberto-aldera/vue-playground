@@ -14,6 +14,11 @@
       "id": "pg3",
       "fullTitle": "Title3",
       "img_path": "../src/assets/logo.svg"
+    },
+    "item4": {
+      "id": "pg4",
+      "fullTitle": "Title4",
+      "img_path": "../src/assets/logo.svg"
     }
   }
 }

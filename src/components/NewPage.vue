@@ -3,6 +3,8 @@ import TheNavbar from "./TheNavbar.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import { useStore } from "../App.vue";
+
+const store = useStore();
 </script>
 
 <template>
@@ -11,7 +13,7 @@ import { useStore } from "../App.vue";
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>{{ specificItem?.fullTitle }}</template>
+    <template #heading>{{ store.getItemById(pageId)?.fullTitle }}</template>
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis
     iaculis porta. Nulla id massa risus. Mauris blandit posuere nunc vel
@@ -35,10 +37,8 @@ import { useStore } from "../App.vue";
 <script lang="ts">
 export default {
   computed: {
-    specificItem: function () {
-      return useStore().itemsFromStore.find(
-        (item) => item.id === this.$route.params.id
-      );
+    pageId: function () {
+      return this.$route.params.id as string;
     },
   },
 };

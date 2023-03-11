@@ -11,7 +11,10 @@ import { useStore } from "@/App.vue";
         :key="index"
         class="col-auto"
       >
-        <router-link :to="{ name: 'page', params: { id: item.id } }"
+        <!-- wait for item.id to be available: https://stackoverflow.com/questions/69711253/error-missing-required-param-id-vue-router-router-link -->
+        <router-link
+          v-if="typeof item.id !== 'undefined'"
+          :to="{ name: 'page', params: { id: item.id } }"
           ><AnImageTile :img_path="item.img_path" :title="item.fullTitle"
         /></router-link>
       </div>

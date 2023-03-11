@@ -21,10 +21,18 @@ import contentData from "../content_data.json";
 </template>
 
 <script lang="ts">
-interface itemObj {
+interface ItemObj {
   id: string;
   fullTitle: string;
   img_path: string;
+}
+
+var allItems: ItemObj[] = [];
+
+let itm: string;
+for (itm in contentData.items) {
+  console.log(itm);
+  allItems.push(contentData["items"][itm]);
 }
 
 export const useStore = defineStore("storeId", {
@@ -32,12 +40,14 @@ export const useStore = defineStore("storeId", {
   state: () => {
     return {
       // type inferred automatically
-      itemsFromStore: [
-        contentData.items.item1,
-        contentData.items.item2,
-        contentData.items.item3,
-      ],
+      itemsFromStore: allItems as ItemObj[],
     };
+  },
+  getters: {
+    getItemById: (state) => {
+      return (itemId: string) =>
+        state.itemsFromStore.find((item) => item.id === itemId);
+    },
   },
 });
 
