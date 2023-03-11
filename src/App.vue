@@ -31,8 +31,7 @@ var allItems: ItemObj[] = [];
 
 let itm: string;
 for (itm in contentData.items) {
-  console.log(itm);
-  allItems.push(contentData["items"][itm]);
+  allItems.push(contentData["items"][itm as keyof typeof contentData.items]);
 }
 
 export const useStore = defineStore("storeId", {
