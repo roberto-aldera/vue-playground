@@ -13,8 +13,9 @@ const store = useStore();
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>{{ store.getItemById(pageId)?.fullTitle }}</template>
-
+    <template #heading>
+      {{ store.getItemById(categoryName, pageId).fullName }}</template
+    >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis
     iaculis porta. Nulla id massa risus. Mauris blandit posuere nunc vel
     facilisis. Donec ac interdum tellus. Aliquam eleifend nunc non tellus
@@ -38,7 +39,12 @@ const store = useStore();
 export default {
   computed: {
     pageId: function () {
+      console.log("Page ID:", this.$route.params.id);
       return this.$route.params.id as string;
+    },
+    categoryName: function () {
+      console.log("Category name:", this.$route.params.name);
+      return this.$route.params.name as string;
     },
   },
 };

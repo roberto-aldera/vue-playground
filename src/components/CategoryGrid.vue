@@ -1,41 +1,31 @@
 <script setup lang="ts">
-import TheNavbar from "./TheNavbar.vue";
-import SimpleFooter from "./SimpleFooter.vue";
 import AnImageTile from "./AnImageTile.vue";
 import { useStore } from "@/App.vue";
-const store = useStore();
 </script>
 
 <template>
-  <TheNavbar />
   <div class="container">
     <div class="row justify-content-center">
       <div
-        v-for="(item, index) in store.getCategoryByName(categoryName)?.items"
+        v-for="(category, index) in useStore().itemsFromStore"
         :key="index"
         class="col-auto"
       >
         <!-- wait for item.id to be available: https://stackoverflow.com/questions/69711253/error-missing-required-param-id-vue-router-router-link -->
         <router-link
-          v-if="typeof item.id !== 'undefined'"
-          :to="{ name: 'page', params: { id: item.id, name: categoryName } }"
-          ><AnImageTile :img_path="item.img_path" :title="item.fullName"
+          v-if="typeof category.name !== 'undefined'"
+          :to="{ name: 'mealGrid', params: { name: category.name } }"
+          ><AnImageTile :img_path="category.img_path" :title="category.name"
         /></router-link>
       </div>
     </div>
   </div>
-  <SimpleFooter />
 </template>
 
 <script lang="ts">
 export default {
   components: {
     AnImageTile,
-  },
-  computed: {
-    categoryName: function () {
-      return this.$route.params.name as string;
-    },
   },
 };
 </script>

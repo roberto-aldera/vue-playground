@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import TheNavbar from "./components/TheNavbar.vue";
 import SimpleFooter from "./components/SimpleFooter.vue";
-import MealGrid from "./components/MealGrid.vue";
+import CategoryGrid from "./components/CategoryGrid.vue";
 import { defineStore } from "pinia";
 import contentData from "../content_data.json";
+import type { ItemObj } from "./components/ItemObj";
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import contentData from "../content_data.json";
   </header>
 
   <main>
-    <MealGrid />
+    <CategoryGrid />
   </main>
 
   <footer>
@@ -21,17 +22,20 @@ import contentData from "../content_data.json";
 </template>
 
 <script lang="ts">
-interface ItemObj {
-  id: string;
-  fullTitle: string;
+interface CategoryObj {
+  name: string;
+  items: ItemObj[];
   img_path: string;
 }
 
-var allItems: ItemObj[] = [];
+var allItems: CategoryObj[] = [];
 
-let itm: string;
-for (itm in contentData.items) {
-  allItems.push(contentData["items"][itm as keyof typeof contentData.items]);
+let category: string;
+for (category in contentData.categories) {
+  console.log(category);
+  allItems.push(
+    contentData["categories"][category as keyof typeof contentData.categories]
+  );
 }
 
 export const useStore = defineStore("storeId", {
@@ -39,20 +43,24 @@ export const useStore = defineStore("storeId", {
   state: () => {
     return {
       // type inferred automatically
-      itemsFromStore: allItems as ItemObj[],
+      itemsFromStore: allItems as CategoryObj[],
     };
   },
   getters: {
-    getItemById: (state) => {
-      return (itemId: string) =>
-        state.itemsFromStore.find((item) => item.id === itemId);
+    getCategoryByName: (state) => {
+      return (categoryName: string) =>
+        state.itemsFromStore.find((category) => category.name === categoryName);
+    },
+    getItemById() {
+      return (categoryName: string, itemId: string) =>
+        this.getCategoryByName(categoryName)?.items[itemId as any];
     },
   },
 });
 
 export default {
   components: {
-    MealGrid,
+    CategoryGrid,
   },
 };
 </script>

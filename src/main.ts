@@ -3,6 +3,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import NewPage from "./components/NewPage.vue";
 import ChildPage from "./components/ChildPage.vue";
+import MealGrid from "./components/MealGrid.vue";
 
 import "./assets/main.css";
 import "mdb-vue-ui-kit/css/mdb.min.css";
@@ -16,7 +17,12 @@ const router = createRouter({
     { path: "/new-page", component: NewPage },
     { path: "/child-page", component: ChildPage },
     {
-      path: "/page/:id",
+      path: "/page/:name",
+      component: MealGrid,
+      name: "mealGrid",
+    },
+    {
+      path: "/page/:name/:id",
       component: NewPage,
       name: "page",
     },
