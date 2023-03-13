@@ -1,6 +1,6 @@
 export interface ItemObj {
   id: string;
   fullName: string;
-  img_path: string;
+  imgPath: string;
   textContent: string;
 }

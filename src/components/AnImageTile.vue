@@ -1,7 +1,7 @@
 <script lang="ts">
 export default {
   props: {
-    img_path: String,
+    imgPath: String,
     title: String,
   },
 };
@@ -10,7 +10,7 @@ export default {
 <template>
   <div>
     <figure class="photo">
-      <img :src="img_path" />
+      <img :src="imgPath" />
       <figcaption>
         <h2>{{ title }}</h2>
       </figcaption>

@@ -19,7 +19,7 @@ const store = useStore();
         <router-link
           v-if="typeof item.id !== 'undefined'"
           :to="{ name: 'page', params: { id: item.id, name: categoryName } }"
-          ><AnImageTile :img_path="item.img_path" :title="item.fullName"
+          ><AnImageTile :imgPath="item.imgPath" :title="item.fullName"
         /></router-link>
       </div>
     </div>

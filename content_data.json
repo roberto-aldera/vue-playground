@@ -2,36 +2,36 @@
   "categories": {
     "cat1": {
       "name": "CategoryOne",
-      "img_path": "../src/assets/logo.svg",
+      "imgPath": "../src/assets/logo.svg",
       "items": {
         "item1": {
           "id": "item1",
           "fullName": "cat1-item1",
-          "img_path": "../src/assets/logo.svg",
+          "imgPath": "../src/assets/logo.svg",
           "textContent": "This is some text content for item 1."
         },
         "item2": {
           "id": "item2",
           "fullName": "cat1-item2",
-          "img_path": "../src/assets/logo.svg",
+          "imgPath": "../src/assets/logo.svg",
           "textContent": "This is some text content for item 2."
         }
       }
     },
     "cat2": {
       "name": "CategoryTwo",
-      "img_path": "../src/assets/logo.svg",
+      "imgPath": "../src/assets/logo.svg",
       "items": {
         "item3": {
           "id": "item3",
           "fullName": "cat2-item3",
-          "img_path": "../src/assets/logo.svg",
+          "imgPath": "../src/assets/logo.svg",
           "textContent": "This is some text content for item 3."
         },
         "item4": {
           "id": "item4",
           "fullName": "cat2-item4",
-          "img_path": "../src/assets/logo.svg",
+          "imgPath": "../src/assets/logo.svg",
           "textContent": "This is some text content for item 4."
         }
       }

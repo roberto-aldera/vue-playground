@@ -25,7 +25,7 @@ import type { ItemObj } from "./components/ItemObj";
 interface CategoryObj {
   name: string;
   items: ItemObj[];
-  img_path: string;
+  imgPath: string;
 }
 
 var allItems: CategoryObj[] = [];

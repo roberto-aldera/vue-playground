@@ -15,7 +15,7 @@ import { useStore } from "@/App.vue";
         <router-link
           v-if="typeof category.name !== 'undefined'"
           :to="{ name: 'mealGrid', params: { name: category.name } }"
-          ><AnImageTile :img_path="category.img_path" :title="category.name"
+          ><AnImageTile :imgPath="category.imgPath" :title="category.name"
         /></router-link>
       </div>
     </div>
