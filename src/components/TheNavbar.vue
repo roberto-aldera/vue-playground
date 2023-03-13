@@ -13,6 +13,7 @@ import {
   MDBDropdownItem,
 } from "mdb-vue-ui-kit";
 import { ref } from "vue";
+import { useStore } from "@/App.vue";
 
 const collapse1 = ref(false);
 const dropdown1 = ref(false);
@@ -39,9 +40,15 @@ const dropdown1 = ref(false);
               >Dropdown</MDBDropdownToggle
             >
             <MDBDropdownMenu aria-labelledby="dropdownMenuButton">
-              <MDBDropdownItem href="#">Action</MDBDropdownItem>
-              <MDBDropdownItem href="#">Another Action</MDBDropdownItem>
-              <MDBDropdownItem href="#">Something else here</MDBDropdownItem>
+              <div
+                v-for="(category, index) in useStore().itemsFromStore"
+                :key="index"
+              >
+                <!-- Hardcoded route for now -->
+                <MDBDropdownItem router to="'/page/CategoryOne">{{
+                  category.name
+                }}</MDBDropdownItem>
+              </div>
             </MDBDropdownMenu>
           </MDBDropdown>
         </MDBNavbarItem>
@@ -59,3 +66,16 @@ const dropdown1 = ref(false);
     </MDBCollapse>
   </MDBNavbar>
 </template>
+
+<script lang="ts">
+export default {
+  computed: {
+    pageId: function () {
+      return this.$route.params.id as string;
+    },
+    categoryName: function () {
+      return this.$route.params.name as string;
+    },
+  },
+};
+</script>
