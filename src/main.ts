@@ -14,7 +14,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: App },
-    { path: "/new-page", component: NewPage },
     { path: "/child-page", component: ChildPage },
     {
       path: "/page/:name",

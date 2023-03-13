@@ -27,7 +27,6 @@ const dropdown1 = ref(false);
     <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
       <MDBNavbarNav class="mb-2 mb-lg-0">
         <MDBNavbarItem router to="/" active> 🏡 Home </MDBNavbarItem>
-        <MDBNavbarItem router to="/new-page"> Link </MDBNavbarItem>
         <MDBNavbarItem router to="/child-page"> Child page 1 </MDBNavbarItem>
 
         <MDBNavbarItem>
