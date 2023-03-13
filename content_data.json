@@ -8,7 +8,7 @@
           "id": "item1",
           "fullName": "cat1-item1",
           "imgPath": "../src/assets/logo.svg",
-          "textContent": "This is some text content for item 1."
+          "textContent": "This is some text content for item 1 from category 1."
         },
         "item2": {
           "id": "item2",
