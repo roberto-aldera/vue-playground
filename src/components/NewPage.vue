@@ -3,6 +3,7 @@ import TheNavbar from "./TheNavbar.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import { useStore } from "../App.vue";
+import type { ItemObj } from "./ItemObj";
 
 const store = useStore();
 </script>
@@ -14,7 +15,9 @@ const store = useStore();
       <DocumentationIcon />
     </template>
     <template #heading>
-      {{ store.getItemById(categoryName, pageId).fullName }}</template
+      {{
+        (store.getItemById(categoryName, pageId) as ItemObj).fullName
+      }}</template
     >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis
     iaculis porta. Nulla id massa risus. Mauris blandit posuere nunc vel
