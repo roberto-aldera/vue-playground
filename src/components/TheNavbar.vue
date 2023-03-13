@@ -45,7 +45,7 @@ const dropdown1 = ref(false);
                 :key="index"
               >
                 <!-- Hardcoded route for now -->
-                <MDBDropdownItem router to="'/page/CategoryOne">{{
+                <MDBDropdownItem router to="/page/CategoryOne">{{
                   category.name
                 }}</MDBDropdownItem>
               </div>
