@@ -42,11 +42,9 @@ const store = useStore();
 export default {
   computed: {
     pageId: function () {
-      console.log("Page ID:", this.$route.params.id);
       return this.$route.params.id as string;
     },
     categoryName: function () {
-      console.log("Category name:", this.$route.params.name);
       return this.$route.params.name as string;
     },
   },

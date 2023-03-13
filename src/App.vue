@@ -32,7 +32,6 @@ var allItems: CategoryObj[] = [];
 
 let category: string;
 for (category in contentData.categories) {
-  console.log(category);
   allItems.push(
     contentData["categories"][category as keyof typeof contentData.categories]
   );
