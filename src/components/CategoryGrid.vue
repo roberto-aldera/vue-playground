@@ -14,7 +14,7 @@ import { useStore } from "@/App.vue";
         <!-- wait for item.id to be available: https://stackoverflow.com/questions/69711253/error-missing-required-param-id-vue-router-router-link -->
         <router-link
           v-if="typeof category.name !== 'undefined'"
-          :to="{ name: 'mealGrid', params: { name: category.name } }"
+          :to="{ name: 'ItemGrid', params: { name: category.name } }"
           ><AnImageTile :imgPath="category.imgPath" :title="category.name"
         /></router-link>
       </div>
