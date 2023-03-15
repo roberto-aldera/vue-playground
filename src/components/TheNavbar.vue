@@ -65,16 +65,3 @@ const dropdown1 = ref(false);
     </MDBCollapse>
   </MDBNavbar>
 </template>
-
-<script lang="ts">
-export default {
-  computed: {
-    pageId: function () {
-      return this.$route.params.id as string;
-    },
-    categoryName: function () {
-      return this.$route.params.name as string;
-    },
-  },
-};
-</script>
