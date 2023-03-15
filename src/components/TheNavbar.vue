@@ -44,8 +44,7 @@ const dropdown1 = ref(false);
                 v-for="(category, index) in useStore().itemsFromStore"
                 :key="index"
               >
-                <!-- Hardcoded route for now -->
-                <MDBDropdownItem router to="/page/CategoryOne">{{
+                <MDBDropdownItem :to="'/page/' + category.name">{{
                   category.name
                 }}</MDBDropdownItem>
               </div>
