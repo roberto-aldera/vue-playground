@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TheNavbar from "./TheNavbar.vue";
-import WelcomeItem from "./WelcomeItem.vue";
+import ContentItem from "./ContentItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import { useStore } from "../App.vue";
 import type { ItemObj } from "./ItemObj";
@@ -10,7 +10,7 @@ const store = useStore();
 
 <template>
   <TheNavbar />
-  <WelcomeItem>
+  <ContentItem>
     <template #icon>
       <DocumentationIcon />
     </template>
@@ -20,7 +20,7 @@ const store = useStore();
       }}</template
     >
     {{ (store.getItemById(categoryName, pageId) as ItemObj).textContent }}
-  </WelcomeItem>
+  </ContentItem>
 </template>
 
 <script lang="ts">

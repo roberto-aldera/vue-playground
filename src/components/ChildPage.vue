@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import TheNavbar from "./TheNavbar.vue";
-import WelcomeItem from "./WelcomeItem.vue";
+import ContentItem from "./ContentItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import SupportIcon from "./icons/IconSupport.vue";
 </script>
 
 <template>
   <TheNavbar />
-  <WelcomeItem>
+  <ContentItem>
     <template #icon>
       <DocumentationIcon />
     </template>
@@ -28,9 +28,9 @@ import SupportIcon from "./icons/IconSupport.vue";
     odio quis interdum ultricies. Nam tempus magna eu urna convallis, in posuere
     metus feugiat. Integer a velit dapibus massa suscipit egestas. Mauris
     fermentum est ut sem eleifend dignissim.
-  </WelcomeItem>
+  </ContentItem>
 
-  <WelcomeItem>
+  <ContentItem>
     <template #icon>
       <SupportIcon />
     </template>
@@ -48,5 +48,5 @@ import SupportIcon from "./icons/IconSupport.vue";
     pulvinar id est vitae porta. Morbi consequat, arcu nec dignissim interdum,
     nunc leo commodo eros, nec placerat sem diam non magna. Mauris scelerisque
     est quis ante blandit, vel ultrices nulla ullamcorper.
-  </WelcomeItem>
+  </ContentItem>
 </template>
