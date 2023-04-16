@@ -6,7 +6,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./vue-playground/",
+  base: "/vue-playground/",
   plugins: [vue(), vueJsx()],
   css: {
     devSourcemap: true,
