@@ -2,7 +2,7 @@
   "categories": {
     "cat1": {
       "name": "CategoryOne",
-      "imgPath": "src/assets/logo.svg",
+      "imgPath": "../src/assets/logo.svg",
       "items": {
         "item1": {
           "id": "item1",
