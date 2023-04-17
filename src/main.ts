@@ -11,17 +11,17 @@ import "mdb-vue-ui-kit/css/mdb.min.css";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("vue-playground"),
   routes: [
     { path: "/", component: App },
     { path: "/child-page", component: ChildPage },
     {
-      path: "/vue-playground/:name",
+      path: "/:name",
       component: ItemGrid,
       name: "ItemGrid",
     },
     {
-      path: "/vue-playground/:name/:id",
+      path: "/:name/:id",
       component: NewPage,
       name: "page",
     },
