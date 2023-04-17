@@ -3,6 +3,8 @@
 This template serves as a starting point for a small Vue application, ready for customisation.
 It's been part of an attempt to learn a bit of Vue and Typescript to build a basic frontend project.
 
+Currently hosted via github pages here: https://roberto-aldera.github.io/vue-playground/
+
 ## Project Setup
 
 ```sh
