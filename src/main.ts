@@ -16,12 +16,12 @@ const router = createRouter({
     { path: "/", component: App },
     { path: "/child-page", component: ChildPage },
     {
-      path: "/page/:name",
+      path: "/vue-playground/:name",
       component: ItemGrid,
       name: "ItemGrid",
     },
     {
-      path: "/page/:name/:id",
+      path: "/vue-playground/:name/:id",
       component: NewPage,
       name: "page",
     },
